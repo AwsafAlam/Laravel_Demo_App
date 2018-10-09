@@ -78,3 +78,13 @@ public function with($request){
 
 - Follow the [Json API Spec](http://jsonapi.org/).
 - Mediun Post [For Custom API](https://medium.com/@dinotedesco/using-laravel-5-5-resources-to-create-your-own-json-api-formatted-api-2c6af5e4d0e8).
+
+---
+
+Laravel Database Queries [Docs](https://laravel.com/docs/5.7/queries)
+
+---
+
+## Using Auth
+
+Just use the command `php artisan make:auth`
