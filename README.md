@@ -21,3 +21,26 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
 
 If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+
+---
+
+## Making a Dummy Data in Database
+
+We start off by creating a table using migration
+
+- `php artisan make:migration create_articles_table --create=articles`
+- `php artisan make:seeder ArticlesTableSeeder`
+- `php artisan make:factory ArticleFactory`
+- `php artisan make:model Article`
+- `php artisan migrate`
+- `php artisan db:seed`
+  
+  We can add table fields to the up() function in migration.
+
+  Inside **ArticlesTableSeeder.php** add `factory(App\Article::class, 30)->create();` to the `run()` function.
+
+  The length of fake data is specified inside **ArticleFactory**
+
+  In **DatabaseSeeder.php** add `$this->call(ArticlesTableSeeder::class);` to seed the data, and we are done.
+
+  ---
