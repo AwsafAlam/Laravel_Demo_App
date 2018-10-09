@@ -55,14 +55,14 @@ Return a collection object/ Resource from the controller. We can customize Respo
 
 For Using withour *Data Wrapping* in **AppServiceProvider** ,  use `use Illuminate\Http\Resources\Json\Resource;` and in `boot()` add
 
-````php
+```
 public function boot()
 {
     Resource::withoutWrapping();
 }
 ```
 
-This will show only one object at the value [ds](http://127.0.0.1:8000/api/articles/3)
+This will show only one object at the value [Address](http://127.0.0.1:8000/api/articles/3)
 
 #### We Can also add Other data with API
 
