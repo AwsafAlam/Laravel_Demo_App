@@ -25,7 +25,7 @@ class PostsController extends Controller
 
         /* Using onlt SQL queries, import thew DB library first*/
         // $posts = DB::select('SELECT * FROM posts');
-        /******************************************************************/
+        /******************************************************************/   
         
 
         return view('posts.index')->with('posts' , $posts);
