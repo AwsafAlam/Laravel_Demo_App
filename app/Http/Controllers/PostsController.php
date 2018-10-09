@@ -32,6 +32,14 @@ class PostsController extends Controller
 
     }
 
+    public function my_api(){
+        $data = [
+            'name' => 'Awsaf',
+            'mobile' => '012674823'
+        ];
+
+        return response()->json($data); 
+    }
     /**
      * Show the form for creating a new resource.
      *

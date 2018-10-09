@@ -21,4 +21,5 @@ Route::get('/hello', function () {
     return 'Hello World';
 });
 
+
 Route::resource('posts' , 'PostsController');
