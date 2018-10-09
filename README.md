@@ -88,3 +88,25 @@ Laravel Database Queries [Docs](https://laravel.com/docs/5.7/queries)
 ## Using Auth
 
 Just use the command `php artisan make:auth`
+
+## For Setting Up React FrontEnd
+
+use the command `php artisan preset react`
+
+`php artisan preset react` removes all the specified front end presets
+
+If everything goes well, this should show up in your terminal.
+
+```
+React scaffolding installed successfully.
+Please run "npm install && npm run dev" to compile your fresh scaffolding.
+```
+
+In the background, Laravel uses Laravel Mix, which is a smooth wrapper for webpack. Webpack, as you might already know, is a module bundler. It resolves all the module dependencies and generates the necessary static assets for JavaScript and CSS. React requires a module bundler to work, and webpack perfectly fits into that role. So Laravel Mix is the layer that sits on top of webpack and makes it easier to use webpack in Laravel.  
+
+For further Reference Follow:
+- https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442
+- https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442
+
+---
+
