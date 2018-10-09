@@ -19,3 +19,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('my_api','PostsController@my_api');
+
+// Articles API
+Route::get('articles', 'ArticleController@index');
+
+//List single Article
+Route::get('articles/{id}', 'ArticleController@show');
+
+
+//Create new article
+Route::post('article' , 'ArticleController@store');
+
+//Update article
+Route::put('article' , 'ArticleController@store');
+
+//Delete
+Route::delete('article' , 'ArticleController@destroy');

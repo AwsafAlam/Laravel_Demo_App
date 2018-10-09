@@ -44,3 +44,37 @@ We start off by creating a table using migration
   In **DatabaseSeeder.php** add `$this->call(ArticlesTableSeeder::class);` to seed the data, and we are done.
 
   ---
+
+## Using Resources
+
+Add controller using `php artisan make:controller ArticleController --resource`
+
+Make Resource Article `php artisan make:resource Article`
+
+Return a collection object/ Resource from the controller. We can customize Resposes in the **Article.php** resource. Import resource `use App\Http\Resources\Article as ArticleResource;` since we already have an Article Model.
+
+For Using withour *Data Wrapping* in **AppServiceProvider** ,  use `use Illuminate\Http\Resources\Json\Resource;` and in `boot()` add
+
+````php
+public function boot()
+{
+    Resource::withoutWrapping();
+}
+```
+
+This will show only one object at the value [ds](http://127.0.0.1:8000/api/articles/3)
+
+#### We Can also add Other data with API
+
+```
+public function with($request){
+
+        return [
+            'version' => '1.0.0',
+            'author' => 'Awsaf'
+        ];
+}
+```
+
+- Follow the [Json API Spec](http://jsonapi.org/).
+- Mediun Post [For Custom API](https://medium.com/@dinotedesco/using-laravel-5-5-resources-to-create-your-own-json-api-formatted-api-2c6af5e4d0e8).
