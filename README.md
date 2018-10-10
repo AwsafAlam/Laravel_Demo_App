@@ -24,6 +24,47 @@ If you're not in the mood to read, [Laracasts](https://laracasts.com) contains o
 
 ---
 
+## Artisan Commands for Laravel
+
+- `php artisan list` gives a list of artisan commands
+- `php artisan serve` Serves the website on localhost
+- `php artisan help migrate` Provides migration help options
+- `php artisan make:controller PostController` makes a custom controller for posts table
+- `php artisan make:controller PostController --resources` makes a custom controller with all the routes already specified. Most of the time this is used.
+- `php artisan make:model Posts` Creats code for post model. This model will contain info about database keys etc.
+- `php artisan make:migration create_post_table -table=Post` migration for table change
+- `php artisan migrate` migrates any changes in code to the database
+- `php artisan tinker` A command line tool for adding / Updating / Changing database values
+
+Some TInker Commands
+
+```bash
+App\TODO::count(); //counts no. of database entries
+$todo = new Todo;
+$todo->title = 'Custom Tile for Todo';
+$todo->save(); //Saves the TODO object in the database.
+```
+
+---
+
+### Eloquent ORM (Object Relational Mapper)
+
+Used for querying the database
+
+Laravel Database Queries [Docs](https://laravel.com/docs/5.7/queries)
+
+---
+
+### Blade Templating Engine
+
+- Extend Layouts
+- Extend Views
+- Custom Components
+- Dynamic Sections
+- Writing Conditionals and loops
+
+---
+
 ## Making a Dummy Data in Database
 
 We start off by creating a table using migration
@@ -55,7 +96,7 @@ Return a collection object/ Resource from the controller. We can customize Respo
 
 For Using withour *Data Wrapping* in **AppServiceProvider** ,  use `use Illuminate\Http\Resources\Json\Resource;` and in `boot()` add
 
-```
+```php
 public function boot()
 {
     Resource::withoutWrapping();
@@ -64,9 +105,9 @@ public function boot()
 
 This will show only one object at the value [Address](http://127.0.0.1:8000/api/articles/3)
 
-#### We Can also add Other data with API
+### We Can also add Other data with API
 
-```
+```php
 public function with($request){
 
         return [
@@ -78,10 +119,6 @@ public function with($request){
 
 - Follow the [Json API Spec](http://jsonapi.org/).
 - Mediun Post [For Custom API](https://medium.com/@dinotedesco/using-laravel-5-5-resources-to-create-your-own-json-api-formatted-api-2c6af5e4d0e8).
-
----
-
-Laravel Database Queries [Docs](https://laravel.com/docs/5.7/queries)
 
 ---
 
@@ -97,7 +134,7 @@ use the command `php artisan preset react`
 
 If everything goes well, this should show up in your terminal.
 
-```
+```bash
 React scaffolding installed successfully.
 Please run "npm install && npm run dev" to compile your fresh scaffolding.
 ```
@@ -105,8 +142,8 @@ Please run "npm install && npm run dev" to compile your fresh scaffolding.
 In the background, Laravel uses Laravel Mix, which is a smooth wrapper for webpack. Webpack, as you might already know, is a module bundler. It resolves all the module dependencies and generates the necessary static assets for JavaScript and CSS. React requires a module bundler to work, and webpack perfectly fits into that role. So Laravel Mix is the layer that sits on top of webpack and makes it easier to use webpack in Laravel.  
 
 For further Reference Follow:
-- https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442
-- https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442
+
+- [Laravel App with React Front end - Part 1](https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442)
+- [Laravel App with React Front end - Part 2](https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442)
 
 ---
-
